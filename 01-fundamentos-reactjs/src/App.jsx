@@ -1,22 +1,35 @@
 import { Header } from './components/Header';
 import { Post } from './Post';
-import './style.css';
+
+import styles from './App.module.css';
+
+import './global.css';
+import { Sidebar } from './components/sidebar';
 
 export function App() {
   return (
    <div>
     <Header/>
-    <Post 
+
+    <div className={styles.wrapper}>
+      
+      <Sidebar/>
+
+      <main>
+        <Post 
       author="Joyce Bigoli" 
       content="Lorem ipsum dolor sit amet, 
     consectetur adipisicing elit. Vero autem impedit labore enim cum 
     natus sunt! Reiciendis sequi ratione provident repudiandae dolorem? 
     Repudiandae recusandae eos eaque inventore impedit perspiciatis error."
     />
-    <Post
+      <Post
       author="Gabriel Buzzi"
       content="Um novo post, muito legal"
       />
+      </main>
+    </div>
+
   </div>
   )
 }
